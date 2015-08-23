@@ -5,15 +5,15 @@
 <link rel="stylesheet" href="style/style.css">
 <script src="jquery-1.11.3.js"></script>
 <script>
-$('document').ready(function() {
-	var headings = $('h2');
-	var toc = $("<ul id='toc'>");
-	for (var i = 0; i < headings.length; i++) {
-		$(headings[i]).html("<a name='link"+i+"'></a>"+$(headings[i]).html());
-		toc.append($("<li><a href='#link"+i+"'>"+$(headings[i]).text()+"</a></li>"));
-	}
-	$('h1').after(toc);
-})
+	$('document').ready(function() {
+		var headings = $('h2');
+		var toc = $("<ul id='toc'>");
+		for (var i = 0; i < headings.length; i++) {
+			$(headings[i]).html("<a name='link"+i+"'></a>"+$(headings[i]).html());
+			toc.append($("<li><a href='#link"+i+"'>"+$(headings[i]).text()+"</a></li>"));
+		}
+		$('h1').after(toc);
+	})
 </script>
 </head>
 <body>
