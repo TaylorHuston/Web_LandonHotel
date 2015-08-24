@@ -3,7 +3,28 @@
 <head>
 <title>The Landon Hotel</title>
 <link rel="stylesheet" href="style/style.css">
-<script src="../../jquery-1.11.1.js"></script>
+<script src="jquery-1.11.3.js"></script>
+    <script type="text/javascript">
+        $(function() {
+            setInterval("fadeImages()", 3000);
+        });
+
+        function fadeImages() {
+            var current = $('#hero div.current');
+            var next = current.next();
+            if (next.length == 0)
+                next = $('#hero div:first');
+
+            current.removeClass('current').addClass('previous');
+
+            next.css({ opacity: 0.0 })
+            		.addClass('current')
+                    .animate({ opacity: 1.0 }, 1000,
+                                function() {
+                                    current.removeClass('previous');
+                                });
+        }
+    </script>
 </head>
 <body>
 	<div class="container">
